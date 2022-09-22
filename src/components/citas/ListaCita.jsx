@@ -1,7 +1,8 @@
 import React from 'react';
-import './style.css'
+import './style.css';
+  
 
-const Cita = ({cita}) => ( 
+const Cita = ({cita, eliminarCita}) => ( 
     <div className="citas">
        <div className="cita">
          {/*<p className='title'>id: <span>{cita.id}</span> </p> */}
@@ -10,8 +11,16 @@ const Cita = ({cita}) => (
         <p className='title'>Fecha: <span>{cita.fecha}</span> </p>
         <p className='title'>Hora: <span>{cita.hora}</span> </p>
         <p className='title'>Sintomas: <span>{cita.sintomas}</span> </p>
+
+        <button
+          className='button eliminar u-full-width'
+          onClick={()=>eliminarCita(cita.id)}
+        >
+          eliminar  &times;
+        </button>
        </div>
     </div>
 );
+
  
 export default Cita;
